@@ -109,7 +109,15 @@ app.listen(port, (req, res) => {
 app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewsRouter);
 app.use("/", userRouter);
-//
+
+//privacy
+app.get("/privacy", (req, res) => {
+  res.render("privacy&terms/privacy.ejs");
+});
+//terms
+app.get("/terms", (req, res) => {
+  res.render("privacy&terms/terms.ejs");
+});
 
 //page not found err
 app.use((req, res, next) => {
