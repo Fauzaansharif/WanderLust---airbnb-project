@@ -21,3 +21,23 @@
     );
   });
 })();
+
+// horizontal scroll on hero
+
+const filterContainer = document.getElementById("filter-container");
+const scrollLeftBtn = document.getElementById("scroll-left");
+const scrollRightBtn = document.getElementById("scroll-right");
+
+scrollLeftBtn.addEventListener("click", () => {
+  filterContainer.scrollBy({
+    left: -300,
+    behavior: "smooth",
+  });
+});
+
+scrollRightBtn.addEventListener("click", () => {
+  filterContainer.scrollBy({
+    left: 300,
+    behavior: "smooth",
+  });
+});

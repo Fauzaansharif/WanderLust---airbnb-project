@@ -3,6 +3,10 @@
 <body>
     <div id="filters">
 
+    <button class="scroll-btn left-btn" id="scroll-left">
+        <i class="fa-solid fa-angle-left"></i>
+    </button>
+
         <div id="filter-container">   
             <div class="filter">
             <div><i class="fa-solid fa-fire"></i></div>
@@ -54,12 +58,17 @@
             <p>Boats</p>
             </div>
         </div>
-        
+        <button class="scroll-btn right-btn" id="scroll-right">
+            <i class="fa-solid fa-angle-right"></i>
+        </button>
 
         <div class="tax-toggle">
             <div class="form-check-reverse form-switch">
                 <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
+                <label class="form-check-label" for="flexSwitchCheckDefault">
+                        <span class="d-inline d-md-none">Tax</span>
+                        <span class="d-none d-md-inline">Display prices after tax</span>
+                </label>
             </div>
 
         </div>
@@ -67,7 +76,7 @@
     </div>
 
 
-    <div class="row row-cols-lg-3 row-cols-md-2  mt-3">
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2  mt-3">
         <%for(listing of allListings){%>
             <a href="/listings/<%=listing._id%>" class="listing-link">
                 <div class="card col listing-card" >
@@ -77,7 +86,8 @@
                         <p class="card-text">
                             <b> <%= listing.title %> </b> <br>
                             &#8377; <%= listing.price.toLocaleString("en-IN") %>/night
-                              <i class="tax-info"> &nbsp;&nbsp; +18% GST = &#8377; <%= (listing.price*1.18).toLocaleString("en-IN") %>
+                              <br>
+                              <i class="tax-info"> &nbsp;&nbsp; +18% GST  = &#8377; <%= (listing.price*1.18).toLocaleString("en-IN") %>
                           </i> 
                         </p>
                     </div>
