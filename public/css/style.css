@@ -225,3 +225,17 @@ body {
     display: none;
   }
 }
+
+@media (width<=877px) {
+  .container {
+    padding: 1rem !important;
+    font-size: 0.9rem;
+  }
+  header {
+    margin-bottom: 0.6rem !important;
+    padding-bottom: 1rem !important;
+  }
+  h1 {
+    font-size: 1.8rem !important;
+  }
+}
